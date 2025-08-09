@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meal Finder - Discover Your Favorite Recipes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo" onclick="goHome()">
+                <i class="fas fa-utensils logo-icon"></i>
+                <h1>MEAL FINDER</h1>
+            </div>
+            <button class="menu-toggle" id="menuToggle">
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Side Menu -->
+    <div class="side-menu" id="sideMenu">
+        <div class="menu-content">
+            <div class="menu-categories" id="menuCategories">
+            </div>
+        </div>
+    </div>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Hero Section -->
+    <div class="hero-section" id="heroSection">
+        <!-- Search Bar -->
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search recipes here ..." class="search-input">
+            <button class="search-button" id="searchButton">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+        
+        <div class="hero-content">
+            <h2>What are your favorite cuisines?</h2>
+            <p>PERSONALIZE YOUR EXPERIENCE</p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Breadcrumb -->
+        <div class="breadcrumb-nav" id="breadcrumbNav" style="display: none;">
+            <i class="fas fa-home"></i>
+            <span id="breadcrumbText">CABBAGE SOUP (SHCHI)</span>
+        </div>
+
+        <!-- Category Description -->
+        <div class="category-description" id="categoryDescription" style="display: none;">
+            <h3 id="categoryTitle"></h3>
+            <p id="categoryDescriptionText"></p>
+        </div>
+
+        <!-- Meal Details Section -->
+        <div class="meal-details-section" id="mealDetailsSection" style="display: none;">
+            <div class="section-header">
+                <h3>MEAL DETAILS</h3>
+                <div class="section-line"></div>
+            </div>
+            
+            <div class="meal-details-content">
+                <div class="meal-image-section">
+                    <img id="mealDetailImage" src="" alt="Meal Image">
+                </div>
+                <div class="meal-info-section">
+                    <h3 id="mealDetailTitle">Cabbage Soup (Shchi)</h3>
+                    <div class="meal-meta">
+                        <div class="meta-item">
+                            <strong>CATEGORY:</strong> <span id="mealCategory">VEGETARIAN</span>
+                        </div>
+                        <div class="meta-item">
+                            <strong>Source:</strong> <a href="#" id="mealSource" target="_blank">Recipe Source</a>
+                        </div>
+                        <div class="meta-item">
+                            <strong>Tags:</strong> <span id="mealTags">Soup</span>
+                        </div>
+                    </div>
+                    
+                    <div class="ingredients-section">
+                        <h4>Ingredients</h4>
+                        <div class="ingredients-grid" id="ingredientsList">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="measures-section">
+                <h4>Measure</h4>
+                <div class="measures-grid" id="measuresList">
+                </div>
+            </div>
+            
+            <div class="instructions-section">
+                <h4>Instructions</h4>
+                <div class="instructions-list" id="instructionsList">
+                </div>
+            </div>
+        </div>
+
+        <!-- Search Results -->
+        <div class="search-results" id="searchResults" style="display: none;">
+            <div class="section-header">
+                <h3 id="resultsTitle">SEARCH RESULTS</h3>
+                <div class="section-line"></div>
+            </div>
+            <div class="recipes-grid" id="recipesGrid">
+            </div>
+        </div>
+
+        <!-- Categories Grid -->
+        <div class="categories-section" id="categoriesSection">
+            <div class="section-header">
+                <h3>CATEGORIES</h3>
+                <div class="section-line"></div>
+            </div>
+            <div class="categories-grid" id="categoriesGrid">
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
