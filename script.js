@@ -136,6 +136,7 @@ function goHome() {
 }
 
 function updateViewDisplay() {
+    // Hide all sections first
     heroSection.style.display = 'none';
     searchResults.style.display = 'none';
     categoriesSection.style.display = 'none';
@@ -149,13 +150,17 @@ function updateViewDisplay() {
             categoriesSection.style.display = 'block';
             break;
         case 'search':
+            // Show search results
+            heroSection.style.display = 'flex'; // keep top hero visible
             searchResults.style.display = 'block';
+            categoriesSection.style.display = 'block'; // also keep categories
             breadcrumbNav.style.display = 'flex';
             breadcrumbText.textContent = 'SEARCH RESULTS';
             break;
         case 'category':
             searchResults.style.display = 'block';
             categoryDescription.style.display = 'block';
+            categoriesSection.style.display = 'block'; // keep categories after category results
             breadcrumbNav.style.display = 'flex';
             breadcrumbText.textContent = selectedCategory.toUpperCase();
             break;
