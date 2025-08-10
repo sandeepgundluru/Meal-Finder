@@ -166,16 +166,18 @@ function updateViewDisplay() {
             break;
         case 'search':
             // Show search results
-            heroSection.style.display = 'flex'; // keep top hero visible
+            heroSection.style.display = 'flex';
             searchResults.style.display = 'block';
-            categoriesSection.style.display = 'block'; // also keep categories
+            categoriesSection.style.display = 'block';
             breadcrumbNav.style.display = 'flex';
             breadcrumbText.textContent = 'SEARCH RESULTS';
             break;
         case 'category':
+            // Added heroSection to stay visible for the category view
+            heroSection.style.display = 'flex';
             searchResults.style.display = 'block';
             categoryDescription.style.display = 'block';
-            categoriesSection.style.display = 'block'; // keep categories after category results
+            categoriesSection.style.display = 'block';
             breadcrumbNav.style.display = 'flex';
             breadcrumbText.textContent = selectedCategory.toUpperCase();
             break;
@@ -186,7 +188,6 @@ function updateViewDisplay() {
             break;
     }
 }
-
 
 // Menu Functions
 function toggleMenu() {
