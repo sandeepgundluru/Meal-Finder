@@ -196,12 +196,10 @@ function updateMenuState() {
         sideMenu.classList.add('open');
         overlay.classList.add('active');
         menuToggle.classList.add('active');
-        document.body.style.overflow = 'hidden';
     } else {
         sideMenu.classList.remove('open');
         overlay.classList.remove('active');
         menuToggle.classList.remove('active');
-        document.body.style.overflow = '';
     }
 }
 
