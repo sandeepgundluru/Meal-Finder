@@ -463,7 +463,7 @@ body {
 
 .recipe-card:hover, .category-card:hover {
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-    transform: translateY(-2px);
+    transform: scale(0.82);
 }
 
 .card-image {
