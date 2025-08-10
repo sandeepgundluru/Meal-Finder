@@ -115,14 +115,22 @@ document.addEventListener('DOMContentLoaded', function() {
 function setupEventListeners() {
     menuToggle.addEventListener('click', toggleMenu);
     overlay.addEventListener('click', closeMenu);
-    searchInput.addEventListener('input', handleSearch);
-    searchButton.addEventListener('click', () => handleSearch({ target: { value: searchInput.value } }));
-    
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && isMenuOpen) {
-            closeMenu();
+    searchButton.addEventListener('click', () => {
+    const value = searchInput.value.trim();
+    if (value) {
+        handleSearch({ target: { value } });
+    }
+});
+
+// Adjust input handler to only trigger search when Enter is pressed or on click
+searchInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+        const searchTerm = searchInput.value.trim();
+        if (searchTerm) {
+            performSearch(searchTerm);
         }
-    });
+    }
+});
 }
 
 // Navigation Functions
