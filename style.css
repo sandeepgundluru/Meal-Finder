@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -5,11 +6,10 @@
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: 'Poppins', sans-serif;
     background-color: #ffffff;
     color: #3d2e1f;
     min-height: 100vh;
-    overflow-y: scroll;
 }
 
 /* Header */
@@ -170,7 +170,7 @@ body {
 /* Hero Section */
 .hero-section {
     position: relative;
-    height: 400px;
+    height: 550px;
     background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.5)), url('header_image.jpg');
     background-size: cover;
     background-position: center;
