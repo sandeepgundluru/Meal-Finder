@@ -166,14 +166,13 @@ function updateViewDisplay() {
             break;
         case 'search':
             // Show search results
-            heroSection.style.display = 'flex';
+            heroSection.style.display = 'flex'; 
             searchResults.style.display = 'block';
             categoriesSection.style.display = 'block';
             breadcrumbNav.style.display = 'flex';
             breadcrumbText.textContent = 'SEARCH RESULTS';
             break;
         case 'category':
-            // Added heroSection to stay visible for the category view
             heroSection.style.display = 'flex';
             searchResults.style.display = 'block';
             categoryDescription.style.display = 'block';
@@ -182,6 +181,8 @@ function updateViewDisplay() {
             breadcrumbText.textContent = selectedCategory.toUpperCase();
             break;
         case 'details':
+            // Added heroSection to stay visible for the meal details page.
+            heroSection.style.display = 'flex';
             mealDetailsSection.style.display = 'block';
             breadcrumbNav.style.display = 'flex';
             categoriesSection.style.display = 'block';
