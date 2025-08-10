@@ -209,6 +209,7 @@ body {
 
 .search-button {
     padding: 1rem 1.2rem;
+    margin-left: 10px;
     background-color: #de5f04;
     border-radius: 50%;
     border: 2px solid white;
