@@ -9,6 +9,7 @@ body {
     background-color: #ffffff;
     color: #3d2e1f;
     min-height: 100vh;
+    overflow-y: scroll;
 }
 
 /* Header */
@@ -82,16 +83,15 @@ body {
     position: fixed;
     top: 0;
     right: 0;
-    height: 100vh;
+    height: 100vh; /* Full height of viewport */
     width: 320px;
     background-color: white;
     box-shadow: -4px 0 12px rgba(0, 0, 0, 0.1);
     transform: translateX(100%);
     transition: transform 0.3s ease-in-out;
     z-index: 40;
-    overflow: hidden;
+    overflow: hidden; /* Prevent outer scroll */
 }
-
 
 .side-menu.open {
     transform: translateX(0);
