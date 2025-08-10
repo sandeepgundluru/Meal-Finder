@@ -242,6 +242,8 @@ async function handleCategorySelect(categoryId) {
     resultsTitle.textContent = 'LOADING...';
     currentView = 'category';
     updateViewDisplay();
+    // Scroll to the top of the page
+    window.scrollTo(0, 0); 
     
     // Show category description
     if (currentCategoryData) {
