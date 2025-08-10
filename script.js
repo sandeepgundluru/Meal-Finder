@@ -34,7 +34,7 @@ let isMenuOpen = false;
 let currentSearchResults = [];
 let selectedCategory = '';
 let currentCategoryData = null;
-let currentView = 'home';
+let currentView = 'home'; // 'home', 'search', 'category', 'details'
 
 // API Functions
 async function fetchCategories() {
@@ -131,6 +131,13 @@ searchInput.addEventListener('keydown', (e) => {
         }
     }
 });
+    
+    // Close menu on escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && isMenuOpen) {
+            closeMenu();
+        }
+    });
 }
 
 // Navigation Functions
@@ -180,6 +187,7 @@ function updateViewDisplay() {
     }
 }
 
+
 // Menu Functions
 function toggleMenu() {
     isMenuOpen = !isMenuOpen;
@@ -196,10 +204,14 @@ function updateMenuState() {
         sideMenu.classList.add('open');
         overlay.classList.add('active');
         menuToggle.classList.add('active');
+        // Remove this so page can still scroll
+        // document.body.style.overflow = 'hidden';
     } else {
         sideMenu.classList.remove('open');
         overlay.classList.remove('active');
         menuToggle.classList.remove('active');
+        // Remove this too
+        // document.body.style.overflow = '';
     }
 }
 
@@ -231,6 +243,7 @@ async function handleCategorySelect(categoryId) {
     currentView = 'category';
     updateViewDisplay();
     
+    // Show category description
     if (currentCategoryData) {
         categoryTitle.textContent = currentCategoryData.name;
         categoryDescriptionText.textContent = currentCategoryData.description;
@@ -252,8 +265,22 @@ async function showMealDetails(mealId) {
         breadcrumbText.textContent = meal.strMeal.toUpperCase();
         updateViewDisplay();
         
+        // Scroll to top of meal details
         mealDetailsSection.scrollIntoView({ behavior: 'smooth' });
     }
+}
+
+async function performSearch(searchTerm) {
+    resultsTitle.textContent = 'SEARCHING...';
+    currentView = 'search';
+    updateViewDisplay();
+
+    const searchedMeals = await searchMeals(searchTerm);
+    currentSearchResults = searchedMeals;
+    selectedCategory = '';
+    currentCategoryData = null;
+    resultsTitle.textContent = 'SEARCH RESULTS';
+    renderRecipes();
 }
 
 function displayMealDetails(meal) {
@@ -277,13 +304,14 @@ function displayMealDetails(meal) {
     // Set ingredients
     const ingredientsList = document.getElementById('ingredientsList');
     ingredientsList.innerHTML = '';
-    let gridIngredientCounter = 1;
+    let gridIngredientCounter = 1; // Counter for the grid items
     
     for (let i = 1; i <= 20; i++) {
         const ingredient = meal[`strIngredient${i}`];
         if (ingredient && ingredient.trim()) {
             const ingredientItem = document.createElement('div');
             ingredientItem.className = 'ingredient-item';
+            // Add a numbered circle and a span for the text
             ingredientItem.innerHTML = `
                 <span class="grid-ingredient-number">${gridIngredientCounter}</span>
                 <span class="grid-ingredient-text">${ingredient}</span>
