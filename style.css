@@ -342,7 +342,7 @@ body {
 .ingredients-section h4,
 .measures-section h4,
 .instructions-section h4 {
-    color: #d97706;
+    color: black;
     margin-bottom: 1rem;
     font-size: 1.125rem;
 }
