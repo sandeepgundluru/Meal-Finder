@@ -359,24 +359,22 @@ if (meal.strTags) {
         }
     }
     
-    // Set instructions
     const instructionsList = document.getElementById('instructionsList');
-    instructionsList.innerHTML = '';
-    
-    if (meal.strInstructions) {
-        const instructions = meal.strInstructions.split(/[\.\n]/).filter(instruction => instruction.trim().length > 10);
-        instructions.forEach((instruction, index) => {
-            if (instruction.trim()) {
-                const instructionStep = document.createElement('div');
-                instructionStep.className = 'instruction-step';
-                instructionStep.innerHTML = `
-                    <div class="step-number">${index + 1}</div>
-                    <div class="step-text">${instruction.trim()}</div>
-                `;
-                instructionsList.appendChild(instructionStep);
-            }
-        });
-    }
+instructionsList.innerHTML = '';
+
+if (meal.strInstructions) {
+    const instructions = meal.strInstructions.split(/[\.\n]/).filter(instruction => instruction.trim().length > 10);
+    instructions.forEach((instruction, index) => {
+        if (instruction.trim()) {
+            const instructionStep = document.createElement('div');
+            instructionStep.className = 'instruction-step';
+            instructionStep.innerHTML = `
+                <div class="step-text">${instruction.trim()}</div>
+            `;
+            instructionsList.appendChild(instructionStep);
+        }
+    });
+}
 }
 
 // Render Functions
