@@ -368,6 +368,7 @@ body {
 
 .grid-ingredient-number {
     background-color: #3a9691;
+    border: 2px solid white;
     color: white;
     width: 22px;
     height: 22px;
