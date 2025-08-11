@@ -374,12 +374,18 @@ function renderCategories() {
 
 function renderMenuCategories() {
     menuCategories.innerHTML = '';
-    categories.forEach(category => {
+    categories.forEach((category, index) => {
         const button = document.createElement('button');
         button.textContent = category.name.charAt(0).toUpperCase() + category.name.slice(1).toLowerCase();
         button.addEventListener('click', () => handleCategorySelect(category.id));
         menuCategories.appendChild(button);
-    });
+
+       
+        if (index < categories.length - 1) {
+            const hr = document.createElement('hr');
+            menuCategories.appendChild(hr);
+        }
+    });
 }
 
 function renderRecipes() {
