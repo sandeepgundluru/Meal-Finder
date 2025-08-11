@@ -353,10 +353,11 @@ body {
 }
 
 .meal-tag-box {
-    background-color: #fef3c7;
-    color: #92400e; 
+    background-color: white;
+    color:  #d97706; 
+    border: 1px solid  #d97706;
     padding: 4px 12px;
-    border-radius: 16px;
+    border-radius: 5px;
     font-size: 0.8rem;
     font-weight: 600;
     text-transform: capitalize;
