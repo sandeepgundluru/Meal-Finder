@@ -363,7 +363,19 @@ body {
     text-transform: capitalize;
 }
 
-.ingredients-section h4,
+.ingredients-section {
+    background-color: #d97706;
+    color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+.ingredients-section h4 {
+    color: white;
+    margin-bottom: 1rem;
+}
+
 .measures-section h4,
 .instructions-section h4 {
     color: black;
