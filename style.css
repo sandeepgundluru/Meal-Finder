@@ -113,6 +113,12 @@ body {
     padding-right: 10px;
 }
 
+.menu-categories hr {
+    opacity: 0.3;
+    border: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.3);
+}
+
 .menu-categories::-webkit-scrollbar {
     width: 6px;
 }
